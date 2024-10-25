@@ -24,6 +24,7 @@ public class SearchController {
     @GetMapping(value = "")
     public String search(Model model) {
         model.addAttribute("columns", columnChoices);
+        model.addAttribute("defaultRadio","all");
         return "search";
     }
 
@@ -40,6 +41,7 @@ public class SearchController {
         }
         model.addAttribute("jobs", jobs);
         model.addAttribute("columns", columnChoices);
+        model.addAttribute("defaultRadio",searchType);
         return "search";
     }
 }
